@@ -994,9 +994,17 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+
+        /* Skip link accessibility */
+        .skip-link:focus {
+            top: 6px !important;
+        }
     </style>
 </head>
 <body>
+    <!-- Skip to content for accessibility -->
+    <a href="#main-content" class="skip-link" style="position: absolute; top: -40px; left: 6px; color: var(--white); background: var(--primary-blue); padding: 8px; text-decoration: none; border-radius: 4px; z-index: 10000; transition: top 0.3s; font-weight: 600;">Skip to main content</a>
+    
     <!-- Loading Screen -->
     <div class="loading" id="loading">
         <div class="spinner"></div>
@@ -1014,15 +1022,19 @@
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-            <div class="mobile-menu-toggle" id="mobileMenuToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" 
+                    aria-label="Toggle navigation menu" 
+                    aria-controls="navMenu" 
+                    aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </button>
         </nav>
     </header>
 
     <!-- Hero Section -->
+    <main id="main-content">
     <section class="hero" id="home">
         <div class="hero-content animate-on-scroll">
             <div class="hero-text">
@@ -1420,6 +1432,7 @@
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -1466,8 +1479,9 @@
         const navMenu = document.getElementById('navMenu');
 
         mobileMenuToggle.addEventListener('click', function() {
-            mobileMenuToggle.classList.toggle('active');
+            const isActive = mobileMenuToggle.classList.toggle('active');
             navMenu.classList.toggle('active');
+            mobileMenuToggle.setAttribute('aria-expanded', isActive);
         });
 
         // Smooth scrolling and active navigation
@@ -1676,6 +1690,7 @@
             if (e.key === 'Escape') {
                 mobileMenuToggle.classList.remove('active');
                 navMenu.classList.remove('active');
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
             }
         });
 
