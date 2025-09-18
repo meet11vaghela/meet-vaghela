@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEET H. VAGHELA - CV</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }
+        h1 { text-align: center; }
+        .contact { text-align: center; margin-bottom: 20px; }
+        .section { margin-bottom: 20px; }
+        .section h2 { border-bottom: 2px solid #000; padding-bottom: 5px; }
+        .section ul { list-style-type: none; padding-left: 0; }
+        .section li { margin-bottom: 10px; }
+        .job { margin-bottom: 15px; }
+        .job h3 { margin: 0; }
+        .job p { margin: 5px 0 0; color: #555; }
+    </style>
+</head>
+<body>
+    <h1>MEET H. VAGHELA</h1>
+    <div class="contact">
+        vagh1747@gmail.com | +91 8849457410 | Bhavnagar, Gujarat, India<br>
+        GitHub: meet11vaghela | LinkedIn: meet-05-vaghela
+    </div>
+
+    <div class="section">
+        <h2>PROFESSIONAL SUMMARY</h2>
+        <p>BCA graduate with 1.5 years of experience in web development and software development. Specialized in PHP, Laravel, and full-stack development with a proven track record of delivering high-quality solutions. Excelled in MVC framework architecture, robust backend systems, API development, and payment gateway integrations. Quick learner with strong problem-solving abilities and excellent team collaboration skills.</p>
+    </div>
+
+    <div class="section">
+        <h2>TECHNICAL SKILLS</h2>
+        <ul>
+            <li>Programming & Development: PHP, JavaScript, Node.js, Express.js</li>
+            <li>Frameworks: Laravel</li>
+            <li>Markup & Styling: HTML5, CSS3, Bootstrap</li>
+            <li>APIs & Data: RESTful APIs, JSON</li>
+            <li>Databases & Storage: MySQL, MongoDB, Query Optimization, Database Design</li>
+            <li>Tools & Technologies: Git, GitHub, Postman, ngrok, Docker, n8n, Ultravox, AI Integration, Prompt Engineering</li>
+            <li>Cloud & Hosting: cPanel</li>
+            <li>Deployment & Server Management</li>
+            <li>Payment Solutions: Stripe Payment Gateway</li>
+            <li>Automation & AI: Workflow Automation (n8n), ChatGPT API</li>
+            <li>Security & Performance: JWT Authentication, OAuth2, HTTPS/SSL, Data Encryption, Caching (Redis)</li>
+            <li>Project Management & Collaboration: Requirement Gathering, Client Communication</li>
+            <li>Languages: English (Fluent), Hindi (Fluent), Gujarati (Native)</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>WORK EXPERIENCE</h2>
+        <div class="job">
+            <h3>Laravel Developer | Insomniacs</h3>
+            <p>April 2025 – Present</p>
+            <ul>
+                <li>Developed and maintained scalable web applications using Laravel framework.</li>
+                <li>Built robust backend systems and RESTful APIs for seamless data handling.</li>
+                <li>Collaborated with cross-functional teams to deliver high-quality software solutions.</li>
+                <li>Implemented best practices for code quality and performance optimization.</li>
+            </ul>
+        </div>
+        <div class="job">
+            <h3>Backend Developer | Apex Software House</h3>
+            <p>April 2024 – March 2025</p>
+            <ul>
+                <li>Engineered robust PHP backend systems for multiple client projects.</li>
+                <li>Created and maintained RESTful APIs ensuring seamless data interaction.</li>
+                <li>Integrated Stripe payment gateway for secure online transactions.</li>
+                <li>Partnered with frontend teams to achieve smooth application functionality and exceeded client expectations.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>EDUCATION</h2>
+        <ul>
+            <li>Bachelor of Computer Applications (BCA), Grade B<br>Maharaja Krishnakumarsinhji Bhavnagar University, 2022 – 2025</li>
+            <li>Higher Secondary Education (HSC), Grade A2<br>Shree Dakshinamurti Vinay Mandir, 2021 – 2022</li>
+            <li>Secondary School Certificate (SSC), Grade B2<br>Shree Dakshinamurti Vinay Mandir, 2019 – 2020</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>LIVE PROJECTS</h2>
+        <ul>
+            <li>TOTALITYCRM – Real Estate Management Platform<br>Developed CRM product using PHP and MongoDB for managing real estate business operations.</li>
+            <li>Godrej Living CMS – Real Estate Platform<br>Engineered dynamic Laravel-based CMS with property listings, user management, content updates, and advanced search using MVC. Integrated RESTful APIs for efficient data handling and responsive design.</li>
+            <li>Convo AI – AI-Powered Call Analysis Platform<br>Developed Laravel and Python-integrated platform enabling AI bots for calls, analytics, conversation tracking, and automated reporting via MVC.</li>
+            <li>Antarang – E-Commerce Platform<br>Built full Laravel e-commerce solution with shopping cart, user authentication, inventory management, and order processing using MVC and Stripe integration.</li>
+            <li>Hospital ERP System<br>Designed PHP/MySQL ERP for patient management, appointments, and billing with MVC architecture.</li>
+            <li>E-Commerce Website<br>Created Laravel e-commerce site with cart functionality, Stripe payments, authentication, and order management via MVC.</li>
+            <li>School Management System<br>Implemented MVC-based system for student info, attendance, teacher grading, and parent performance updates.</li>
+            <li>Fast – Healthcare ERP System<br>Developed Laravel MVC system for patient records, appointments, and analytics reporting.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>KEY ACHIEVEMENTS</h2>
+        <ul>
+            <li>Delivered 7+ live projects achieving full client satisfaction.</li>
+            <li>Built AI-powered call analysis platform integrating Laravel and Python.</li>
+            <li>Engineered dynamic real estate CMS with advanced search and API integration.</li>
+            <li>Achieved zero security incidents in Stripe payment integrations.</li>
+            <li>Mastered MVC architecture and design patterns in agile environments.</li>
+            <li>Consistently met project deadlines and quality standards.</li>
+        </ul>
+    </div>
+</body>
+</html>

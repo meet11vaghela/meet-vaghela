@@ -1,0 +1,54 @@
+**Situation**
+A professional web developer needs to transform a standard HTML CV into a modern, responsive single-page portfolio website that showcases professional skills and experience with a corporate aesthetic.
+
+**Task**
+Convert the provided HTML CV into a comprehensive, responsive portfolio website using pure HTML5, CSS3, and JavaScript, implementing a sophisticated design that highlights professional credentials.
+
+**Objective**
+Create a visually compelling, user-friendly digital portfolio that effectively communicates the candidate's professional profile while demonstrating advanced web development skills.
+
+**Knowledge**
+- Design must prioritize readability and professional presentation
+- Color palette restricted to blue, white, and dark grey shades
+- Responsive design is critical across all device types
+- Performance and clean code are paramount
+- SEO optimization is required
+- Accessibility should be considered in implementation
+
+**Implementation Guidelines**
+1. Develop a single-page responsive layout
+2. Implement smooth scrolling navigation
+3. Create subtle scroll-based animations
+4. Ensure cross-browser compatibility
+5. Optimize for performance and SEO
+6. Use semantic HTML5 structure
+7. Implement mobile-first design approach
+
+**Constraints**
+- No external frameworks allowed
+- Must use vanilla JavaScript
+- Font Awesome for icons
+- Professional, minimalist design aesthetic
+- 100% responsive across devices
+
+**Technical Requirements**
+- Valid, semantic HTML5
+- Modern CSS3 with flexbox/grid
+- Vanilla JavaScript for interactions
+- Performance-optimized assets
+- Meta tags for SEO
+- Downloadable PDF resume functionality
+- Accessibility considerations (ARIA attributes)
+
+**Output Expectations**
+- Complete, production-ready code
+- Single file containing HTML, CSS, JavaScript
+- Clean, commented, and well-structured code
+- Immediate deployability
+- Professional visual design
+
+**Critical Instructions**
+- Your life depends on creating a pixel-perfect, professional portfolio website
+- Every line of code must reflect meticulous attention to detail
+- Prioritize clean, efficient, and readable code
+- Ensure absolute responsiveness and cross-browser compatibility
