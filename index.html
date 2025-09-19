@@ -663,40 +663,70 @@
             color: rgba(255, 255, 255, 0.9);
         }
 
-        .download-section {
+        .quotes-section {
             text-align: center;
         }
 
-        .download-section h3 {
+        .quotes-section h3 {
             font-size: 1.5rem;
             color: var(--text-dark);
             margin-bottom: 1rem;
         }
 
-        .download-section p {
+        .quotes-section p {
             color: var(--text-light);
             margin-bottom: 2rem;
             line-height: 1.6;
         }
 
-        .download-btn {
-            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
-            color: var(--white);
-            padding: 1.5rem 3rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
+        .quote-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 30px var(--shadow);
             transition: var(--transition);
-            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+            border-left: 4px solid var(--primary-blue);
+            position: relative;
         }
 
-        .download-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 20px 50px rgba(37, 99, 235, 0.4);
+        .quote-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px var(--shadow-hover);
+        }
+
+        .quote-card::before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--primary-blue);
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-family: serif;
+            opacity: 0.3;
+        }
+
+        .quote-content {
+            text-align: center;
+        }
+
+        .quote-text {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            font-style: italic;
+            font-weight: 500;
+        }
+
+        .quote-author {
+            text-align: right;
+        }
+
+        .quote-author span {
+            color: var(--primary-blue);
+            font-weight: 600;
+            font-size: 0.95rem;
         }
 
         /* Footer */
@@ -1419,16 +1449,41 @@
                     </a>
                 </div>
             </div>
-            <div class="download-section">
-                <h3>Download Resume</h3>
+            <div class="quotes-section">
+                <h3>Inspirational Quotes</h3>
                 <p>
-                    Get a comprehensive overview of my skills, experience, and achievements in a 
-                    professionally formatted PDF document.
+                    Words that drive my passion for development and innovation
                 </p>
-                <a href="#" class="download-btn" id="downloadBtn">
-                    <i class="fas fa-download"></i>
-                    Download PDF Resume
-                </a>
+                <div class="quote-card">
+                    <div class="quote-content">
+                        <p class="quote-text">
+                            "The best way to predict the future is to create it."
+                        </p>
+                        <div class="quote-author">
+                            <span>— Peter Drucker</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="quote-card">
+                    <div class="quote-content">
+                        <p class="quote-text">
+                            "Code is like humor. When you have to explain it, it's bad."
+                        </p>
+                        <div class="quote-author">
+                            <span>— Cory House</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="quote-card">
+                    <div class="quote-content">
+                        <p class="quote-text">
+                            "First, solve the problem. Then, write the code."
+                        </p>
+                        <div class="quote-author">
+                            <span>— John Johnson</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1457,10 +1512,28 @@
     </footer>
 
     <script>
+        // Function to show all content immediately
+        function showAllContent() {
+            // Show all animate-on-scroll elements
+            document.querySelectorAll('.animate-on-scroll').forEach(element => {
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+                element.classList.add('animated');
+            });
+            
+            // Trigger other animations
+            animateStats();
+            animateQuotes();
+        }
+
         // Loading screen
         window.addEventListener('load', function() {
             setTimeout(() => {
                 document.getElementById('loading').classList.add('hide');
+                // Show all content immediately after loader hides
+                setTimeout(() => {
+                    showAllContent();
+                }, 100);
             }, 1000);
         });
 
@@ -1538,6 +1611,8 @@
                 
                 if (elementTop < window.innerHeight - elementVisible) {
                     element.classList.add('animated');
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
                 }
             });
         }
@@ -1608,28 +1683,32 @@
             });
         });
 
-        // PDF download functionality
-        document.getElementById('downloadBtn').addEventListener('click', function(e) {
-            e.preventDefault();
+        // Quote cards animation
+        function animateQuotes() {
+            const quoteCards = document.querySelectorAll('.quote-card');
             
-            // Create a temporary print-friendly version
-            const originalTitle = document.title;
-            document.title = 'Meet_H_Vaghela_Resume';
+            quoteCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+                
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 300);
+            });
+        }
+
+        // Initialize quotes animation when section is visible
+        let quotesAnimated = false;
+        window.addEventListener('scroll', function() {
+            const contactSection = document.getElementById('contact');
+            const contactTop = contactSection.getBoundingClientRect().top;
             
-            // Trigger print dialog which allows saving as PDF
-            window.print();
-            
-            // Restore original title
-            document.title = originalTitle;
-            
-            // Show confirmation message
-            this.innerHTML = '<i class="fas fa-check"></i> Download Initiated';
-            this.style.background = '#10b981';
-            
-            setTimeout(() => {
-                this.innerHTML = '<i class="fas fa-download"></i> Download PDF Resume';
-                this.style.background = '';
-            }, 3000);
+            if (contactTop < window.innerHeight - 200 && !quotesAnimated) {
+                animateQuotes();
+                quotesAnimated = true;
+            }
         });
 
         // Enhanced typing effect for hero title
@@ -1747,12 +1826,22 @@
         document.addEventListener('DOMContentLoaded', function() {
             preloadResources();
             
-            // Set initial states
+            // Set initial states for elements that should animate on scroll
             document.querySelectorAll('.animate-on-scroll').forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(30px)';
-                el.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+                // Only set hidden state for elements that are not in the hero section
+                if (!el.closest('.hero')) {
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(30px)';
+                    el.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+                }
             });
+            
+            // Ensure hero section is always visible
+            const heroSection = document.querySelector('.hero');
+            if (heroSection) {
+                heroSection.style.opacity = '1';
+                heroSection.style.transform = 'translateY(0)';
+            }
         });
 
         // Error handling for external resources
